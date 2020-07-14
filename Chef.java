@@ -23,11 +23,14 @@ public class Chef implements Runnable {
     }
 
     public void run() {
+        System.out.println("The tickets are pouring in...get ready lads!\n");
+        System.out.println(Thread.currentThread().getName() + " places the Eggs on the counter");
+
         // Places ingredient on counter 20 times.
-        for(int j = 1; j <= 20; j++) {
+        for(int j = 0; j <= 20; j++) {
             selectIngredients();
             for(int i:selected) {
-                counter.placeItem(i);
+                counter.place(i);
             }
         }
     }
